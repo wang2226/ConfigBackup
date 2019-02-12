@@ -3,10 +3,8 @@
 #rsync -avh --progress ~/AnacondaProjects/ /Volumes/BRUCE-HD1/AnacondaProjects
 #rsync -avh --progress ~/AndroidStudioProjects/ /Volumes/BRUCE-HD1/AndroidStudioProjects
 #rsync -avh --progress /Applications/ /Volumes/BRUCE-HD1/Applications
-rsync -avh --progress ~/Desktop/ /Volumes/BRUCE-HD1/Desktop
 rsync -avh --progress ~/Documents/ /Volumes/BRUCE-HD1/Documents
 #rsync -avh --progress ~/dotfiles/ /Volumes/BRUCE-HD1/dotfiles
-rsync -avh --progress ~/Downloads/ /Volumes/BRUCE-HD1/Downloads
 #rsync -avh --progress ~/flower_photos/ /Volumes/BRUCE-HD1/flower_photos
 #rsync -avh --progress ~/Google\ Drive/ /Volumes/BRUCE-HD1/Google\ Drive
 rsync -avh --progress ~/IdeaProjects/ /Volumes/BRUCE-HD1/IdeaProjects
