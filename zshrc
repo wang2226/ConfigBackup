@@ -4,6 +4,7 @@ export ZSH=/Users/Bruce/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+
 ZSH_THEME='rafiki'
 
 # Uncomment the following line to use case-sensitive completion.
@@ -52,8 +53,8 @@ plugins=(git autojump osx)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,20 +114,44 @@ if [ -f /usr/local/bin/brew ]; then
     export HOMEBREW_GITHUB_API_TOKEN=ba109dba10207083f09edaf3f93cf587a811c701
 fi
 
-#screenfetch at login
+# screenfetch at login
 if [ -f ~/.zshrc ]; then
 	screenfetch
 fi
 
 . /Users/Bruce/Documents/myhub/torch/install/bin/torch-activate
 
-### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/zsh_autocomplete
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=~/anaconda3/bin:$PATH
+export PATH=$PATH:~/anaconda3/bin
 # export PATH=/Users/Bruce/anaconda3/envs/Python2/bin:$PATH
  
 # Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/Bruce/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/Bruce/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/Bruce/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/Bruce/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/Bruce/work/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/Bruce/work/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/Bruce/work/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/Bruce/work/google-cloud-sdk/completion.zsh.inc'; fi
